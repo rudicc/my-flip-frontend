@@ -1,0 +1,173 @@
+.progresscheckouts {
+    // :root {
+    //     --green: #1cbd2c;
+    //     --grey: #c4c4c4;
+    //     --white: #ffffff;
+    //     --padding: 1em;
+    // }
+    
+    * {
+        padding: 0;
+        border: 0;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    // body { 
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+        width: 90vw;
+        overflow: hidden;
+        font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    // }
+    
+    .mainWrapper {
+        width: 100ch;
+        min-width: 40ch;
+        max-width: 75vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .statusBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+        position: relative;
+        cursor: default;
+    }
+    
+    .statusBar::before {
+        content: "";
+        height: 0.3em;
+        background-color:  #c4c4c4; //var($--grey);
+        position: absolute;
+        left: 1em; //($--padding);
+        right: 1em; //var($--padding);
+    }
+    
+    .pBar {
+        content: "";
+        height: 0.3em;
+        border-radius: 0 0 0.15em 0.15em;
+        background-color: #1cbd2c; //var($--green);
+        max-width: 100%;
+        margin: 10px #000000 solid;
+        position: absolute;
+        left: 0;
+        width: 0%;
+    }
+    
+    .statusBar > .node {
+        background-color:  #c4c4c4 ; //var($--grey);
+        height: 1.2em;
+        width: 1.2em;
+        border-radius: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .node > .text {
+        font-weight: 200;
+        color: #c4c4c4; //var($--grey);
+        text-align: center;
+        width: 150px;
+        position: absolute;
+        display:block;
+        top: 2.8ch;
+        cursor:default;
+    }
+    
+    .node.done {
+        background-color: #1cbd2c; //var($--green);
+    }
+    
+    .node > .text.done {
+        color: #1cbd2c; //var($--green);
+    }
+    
+    .node > .main {
+        position:absolute;
+        border: 0.2em #c4c4c4 solid; //var($--grey) solid;
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+    }
+    
+    .node > .main.done {
+        border: 0.2em #1cbd2c solid; //var($--green)
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+    }
+    
+    .mainWrapper > .buttonHolder {
+        margin-top: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .button {
+        padding: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin: 1em;
+        font-size: 1.3em;
+        border-radius: 1.5em;
+        cursor: pointer;
+    }
+    .button.b-next {
+        background-color: #1cbd2c; //var($--green);
+        color: #ffffff; //var($--white);
+    }
+    
+    .button.b-next:hover {
+        box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.2);
+    }
+    
+    .button.disabled,
+    .button.disabled:hover {
+        opacity: 30%;
+        cursor: default;
+    }
+    
+    .button.b-next.disabled:hover {
+        box-shadow: none;
+    }
+    
+    .button.b-back {
+        box-shadow: 0px 0px 0px 0.2em #1cbd2c  inset; //var($--green)
+        background-color: #ffffff; //var($--white);
+        color: #1cbd2c; //var($--green);
+    }
+    
+    .made {
+        position: absolute;;
+        bottom: 0.7em;
+    }
+    
+    .made > .credit {
+        opacity: 40%;
+        color: #4b4b4b;
+        text-align: center;
+    }
+}

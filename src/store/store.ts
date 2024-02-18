@@ -1,0 +1,164 @@
+import { configureStore } from "@reduxjs/toolkit";
+import { CartSlice } from "./features/cartSlice";
+import { PersonSlice } from "./features/personSlice";
+import productsSlice from "./features/productsSlice";
+import menutabSlice from "./features/menutabSlice";
+import categoriesSlice from "./features/categoriesSlice";
+import products_tblSlice from "./features/products_tblSlice";
+import UploadedFilesSlice from "./features/uploaded_filesSlice";
+ 
+
+//********** tbl */
+import AtblSlice from "./featurestbl/a_tblSlice";
+import Address_booktblSlice from "./featurestbl/address_book_tblSlice";
+import Address_formattblSlice from "./featurestbl/address_format_tblSlice";
+import AdministratorstblSlice from "./featurestbl/administrators_tblSlice";
+
+import BannerstblSlice from "./featurestbl/banners_tblSlice";
+import Banners_historytblSlice from "./featurestbl/banners_history_tblSlice";
+
+import CategoriestblSlice from "./featurestbl/categories_tblSlice";
+import Categories_descriptiontblSlice from "./featurestbl/categories_description_tblSlice";
+
+import ConfigurationtblSlice from "./featurestbl/configuration_tblSlice";
+import Configuration_grouptblSlice from "./featurestbl/configuration_group_tblSlice";
+
+import CountertblSlice from "./featurestbl/counter_tblSlice";
+import Counter_historytblSlice from "./featurestbl/counter_history_tblSlice";
+import CountriestblSlice from "./featurestbl/countries_tblSlice";
+
+import CurrenciestblSlice from "./featurestbl/currencies_tblSlice";
+
+import CustomerstblSlice from "./featurestbl/customers_tblSlice";
+import Customers_baskettblSlice from "./featurestbl/customers_basket_tblSlice";
+import Customers_basket_attributestblSlice from "./featurestbl/customers_basket_attributes_tblSlice";
+import Customers_infotblSlice from "./featurestbl/customers_info_tblSlice";
+
+import Geo_zonestblSlice from "./featurestbl/geo_zones_tblSlice";
+import Grp_keytblSlice from "./featurestbl/grp_key_tblSlice";
+import LanguagestblSlice from "./featurestbl/languages_tblSlice";
+import LngstblSlice from "./featurestbl/lngs_tblSlice";
+import ManufacturerstblSlice from "./featurestbl/manufacturers_tblSlice";
+import Manufacturers_infotblSlice from "./featurestbl/manufacturers_info_tblSlice";
+import Menu_tabtblSlice from "./featurestbl/menu_tab_tblSlice";
+import NewsletterstblSlice from "./featurestbl/newsletters_tblSlice";
+
+import OrderstblSlice from "./featurestbl/orders_tblSlice";
+import Orders_productstblSlice from "./featurestbl/orders_products_tblSlice";
+import Orders_products_attributestblSlice from "./featurestbl/orders_products_attributes_tblSlice";
+import Orders_products_downloadtblSlice from "./featurestbl/orders_products_download_tblSlice";
+import Orders_statustblSlice from "./featurestbl/orders_status_tblSlice";
+import Orders_status_historytblSlice from "./featurestbl/orders_status_history_tblSlice";
+import Orders_totaltblSlice from "./featurestbl/orders_total_tblSlice";
+import TopbookSlice from "./features/topbookSlice";
+
+//import ProductstblSlice from "./featurestbl/products_tblSlice";
+import Products_attributestblSlice from "./featurestbl/products_attributes_tblSlice";
+import Products_attributes_downloadtblSlice from "./featurestbl/products_attributes_download_tblSlice";
+import Products_descriptiontblSlice from "./featurestbl/products_description_tblSlice";
+import Products_hometblSlice from "./featurestbl/products_home_tblSlice";
+import Products_notificationstblSlice from "./featurestbl/products_notifications_tblSlice";
+import Products_optionstblSlice from "./featurestbl/products_options_tblSlice";
+import Products_options_valuestblSlice from "./featurestbl/products_options_values_tblSlice";
+import Products_options_values_to_products_optionstblSlice from "./featurestbl/products_options_values_to_products_options_tblSlice";
+import Products_to_categoriestblSlice from "./featurestbl/products_to_categories_tblSlice";
+
+import ReviewstblSlice from "./featurestbl/reviews_tblSlice";
+import Reviews_descriptiontblSlice from "./featurestbl/reviews_description_tblSlice";
+import SessionstblSlice from "./featurestbl/sessions_tblSlice";
+import SpecialstblSlice from "./featurestbl/specials_tblSlice";
+import Tax_classtblSlice from "./featurestbl/tax_class_tblSlice";
+import Tax_ratestblSlice from "./featurestbl/tax_rates_tblSlice";
+import Uploaded_filestblSlice from "./featurestbl/uploaded_files_tblSlice";
+import Users_typetblSlice from "./featurestbl/users_type_tblSlice";
+import Whos_onlinetblSlice from "./featurestbl/whos_online_tblSlice";
+import ZonestblSlice from "./featurestbl/zones_tblSlice";
+import Zones_to_geo_zonestblSlice from "./featurestbl/zones_to_geo_zones_tblSlice";
+import Customers_ismember_tblSlice from "./featurestbl/customers_ismember_tblSlice";
+//***** end tbl */
+
+import  categoriesSelectionSlice  from "./features/categoriesSelectSlice";
+import  ProgressStateSlice from "./features/progress_checkout_stateSlice";
+//
+import orders_productsBySlice from "./features/orders_productsBySlice";
+import uploadedFilesPdf from "./features/uploaded_filesPdfSlice";
+import uploaded_filesPdfSlice from "./features/uploaded_filesPdfSlice";
+
+export const store = configureStore({
+  reducer: {
+    person: PersonSlice.reducer,
+    cart: CartSlice.reducer,
+    product: productsSlice,
+    producttbl: products_tblSlice,
+    menus: menutabSlice,
+    categories: categoriesSlice,
+    uploadfile: UploadedFilesSlice,
+    categoriesselect: categoriesSelectionSlice,
+    topbook:TopbookSlice,
+    progress_state:ProgressStateSlice,
+    orders_productscutomers:orders_productsBySlice,
+    uploadedFilesPdf:uploaded_filesPdfSlice,
+    
+    //tbl
+    atbl: AtblSlice,
+    address_booktbl: Address_booktblSlice,
+    address_formattbl: Address_formattblSlice,
+    administratorstbl: AdministratorstblSlice,
+    bannerstbl: BannerstblSlice,
+    banners_historytbl: Banners_historytblSlice,
+    categoriestbl: CategoriestblSlice,
+    categories_descriptiontbl: Categories_descriptiontblSlice,
+    configurationtbl: ConfigurationtblSlice,
+    configuration_grouptbl: Configuration_grouptblSlice,
+    countertbl: CountertblSlice,
+    counter_historytbl: Counter_historytblSlice,
+    countriestbl: CountriestblSlice,
+    currenciestbl: CurrenciestblSlice,
+    customerstbl: CustomerstblSlice,
+    customers_baskettbl: Customers_baskettblSlice,
+    customers_basket_attributestbl: Customers_basket_attributestblSlice,
+    customers_infotbl: Customers_infotblSlice,
+    geo_zonestbl: Geo_zonestblSlice,
+    grp_keytbl: Grp_keytblSlice,
+    languagestbl: LanguagestblSlice,
+    lngstbl: LngstblSlice,
+    manufacturerstbl: ManufacturerstblSlice,
+    manufacturers_infotbl: Manufacturers_infotblSlice,
+    menu_tabtbl: Menu_tabtblSlice,
+    newsletterstbl: NewsletterstblSlice,
+    orderstbl: OrderstblSlice,
+    orders_productstbl: Orders_productstblSlice,
+    orders_products_attributestbl: Orders_products_attributestblSlice,
+    orders_products_downloadtbl: Orders_products_downloadtblSlice,
+    orders_statustbl: Orders_statustblSlice,
+    orders_status_historytbl: Orders_status_historytblSlice,
+    orders_totaltbl: Orders_totaltblSlice,
+    //productstbl: ProductstblSlice,
+    products_attributestbl: Products_attributestblSlice,
+    products_attributes_downloadtbl: Products_attributes_downloadtblSlice,
+    products_descriptiontbl: Products_descriptiontblSlice,
+    products_hometbl: Products_hometblSlice,
+    products_notificationstbl: Products_notificationstblSlice,
+    products_optionstbl: Products_optionstblSlice,
+    products_options_valuestbl: Products_options_valuestblSlice,
+    products_options_values_to_products_optionstbl: Products_options_values_to_products_optionstblSlice,
+    products_to_categoriestbl: Products_to_categoriestblSlice,
+    reviewstbl: ReviewstblSlice,
+    reviews_descriptiontbl: Reviews_descriptiontblSlice,
+    sessionstbl: SessionstblSlice,
+    specialstbl: SpecialstblSlice,
+    tax_classtbl: Tax_classtblSlice,
+    tax_ratestbl: Tax_ratestblSlice,
+    uploaded_filestbl: Uploaded_filestblSlice,
+    users_typetbl: Users_typetblSlice,
+    whos_onlinetbl: Whos_onlinetblSlice,
+    zonestbl: ZonestblSlice,
+    zones_to_geo_zonestbl: Zones_to_geo_zonestblSlice,
+    customers_ismembertbl:Customers_ismember_tblSlice,
+
+    //end tbl
+     
+  },
+});
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

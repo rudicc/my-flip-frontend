@@ -1,0 +1,1 @@
+export const UrlServer =  import.meta.env.VITE_APP_API; //= "http://localhost:5000";

@@ -1,0 +1,25 @@
+.menu_slidebar {
+    @include pa_ma($sm 0 0 0, none);
+    img {
+        width: 20px;
+     }
+    .showBlogMenuSlide {
+        background: $white;
+        @include positions(absolute, 11%, none, 10px, 20px, 250px, auto);
+        @include shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px);
+        @include pa_ma(20px 0, 0);
+        border-radius: 5px;
+        z-index: 0;        
+        .empty {
+            @include flex(center, space-between, center);
+            @include pa_ma(0 20px, 0);
+            img {
+            width: 50px;
+            height: 50px;
+            }
+        }
+    }  
+    .hideMenuSlide {
+        display: none;
+      }      
+}
